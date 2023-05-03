@@ -1,0 +1,89 @@
+pizza={
+   id,
+   name,
+   description,
+   price,
+   url
+   ingredients:[{id,name,price}...{id,name,price}]
+}
+
+el precio de la pizza se calcula sumando el coste de los ingredientes
+y agregando un 20% de beneficios.
+
+LECTURAS-ESCRITURAS
+
+http://localhost:8080/v1/pizzas
+
+	1. sin ninguna intención /addpizzas /deletepizzas /updatepizzas /getpizzas
+
+	2. pluralizada
+
+	3. versionado
+
+
+create
+
+content-type: application/json
+	      application/xml
+
+idempotentes:GET,PUT,DELETE
+NO IDEMPOTENTES: POST,PATCH
+
+path		verbo		body(req)			body(res)	ok		error		
+/pizzas		POST		{name,des,url,ingredients[]}	{id,price}	201		400
+												500
+												401
+												403
+												405
+												415
+//update	
+/pizzas/:id	PUT/PATCH	{...}				EMPTY||{}	204||200	400
+												500
+												401
+		a=1(PUT)	
+		a++(PATCH)									403
+												405
+												415				
+//remove	
+/pizzas/:id	DELETE		EMPTY				EMPTY		204		400
+												404
+												401
+												403
+												405
+												415
+												500
+//GET
+/pizzas/:id	GET		EMPTY				{}		200		404
+												400
+												401
+												403
+												405
+												415
+												500
+
+//GET
+/pizzas		GET		EMPTY				[{}]||[]	200		
+												400
+												401
+												403
+												405
+												415
+												500
+
+dame todas las pizzas que contengan la palabra "car" la página 1 y 25 registros por página
+
+/pizzas?name=car&page=1&size=25&attributes=id,name,price&sort
+/pizzas?name=car&page=1&size=25&fields=id,name,price&sort=asc
+	QueryString
+
+https://www.odata.org/
+
+400-Bad Request	409
+	{name:"el atributo es requerido"}
+500-Internal server error
+	timeout
+	estamos en obras
+
+403 or 404
+
+	
