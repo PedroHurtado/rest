@@ -1,0 +1,39 @@
+public class Pizza{
+   private final string id;
+   private List<Ingredients> ingredients = new ArrayList<>()
+   public Pizza(string id){
+        this.id = id;
+   }
+
+   public string getId(){
+     return this.id;
+   }
+
+   public void addIngredient(Ingredient ingredient){}
+   public void removeIngredient(Ingredient,ingredient){}
+
+   
+}
+
+POST /v1/pizzas/{id}/ingredients
+{
+
+}
+
+DELETE /v1/pizzas/{id}/ingredients/:ingredientid
+
+
+/invoices/{id}/accept
+
+//ok
+class Invoices{
+   public void accept(){}
+}
+
+
+class Invoices{
+   public bool Ac
+   public void setAccept(){}
+
+   public void getAccept(){}
+}

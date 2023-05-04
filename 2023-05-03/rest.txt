@@ -15,10 +15,9 @@ LECTURAS-ESCRITURAS
 http://localhost:8080/v1/pizzas
 
 	1. sin ninguna intención /addpizzas /deletepizzas /updatepizzas /getpizzas
-
 	2. pluralizada
-
 	3. versionado
+	4. no extension
 
 
 create
@@ -29,46 +28,48 @@ content-type: application/json
 idempotentes:GET,PUT,DELETE
 NO IDEMPOTENTES: POST,PATCH
 
-path		verbo		body(req)			body(res)	ok		error		
+path		verbo		body(req)						body(res)	ok		error		
 /pizzas		POST		{name,des,url,ingredients[]}	{id,price}	201		400
-												500
-												401
-												403
-												405
+																			500
+																			401
+																			403
+																			405
 												415
 //update	
-/pizzas/:id	PUT/PATCH	{...}				EMPTY||{}	204||200	400
-												500
-												401
-		a=1(PUT)	
-		a++(PATCH)									403
-												405
-												415				
+/pizzas/:id	PUT/PATCH	{...}				EMPTY||{}			204||200	
+																			400
+																			500
+																			401
+		a=1(PUT)															404
+		a++(PATCH)															403
+																			405
+																			415				
 //remove	
-/pizzas/:id	DELETE		EMPTY				EMPTY		204		400
-												404
-												401
-												403
-												405
-												415
-												500
+/pizzas/:id	DELETE		EMPTY				EMPTY		
+																	204		400
+																			404
+																			401
+																			403
+																			405
+																			415
+																			500
 //GET
-/pizzas/:id	GET		EMPTY				{}		200		404
-												400
-												401
-												403
-												405
-												415
-												500
+/pizzas/:id	GET		EMPTY				{}							200		404
+																			400
+																			401
+																			403
+																			405
+																			415
+																			500
 
 //GET
-/pizzas		GET		EMPTY				[{}]||[]	200		
-												400
-												401
-												403
-												405
-												415
-												500
+/pizzas		GET		EMPTY				[{}]||[]					200		
+																			400
+																			401
+																			403
+																			405
+																			415
+																			500
 
 dame todas las pizzas que contengan la palabra "car" la página 1 y 25 registros por página
 
@@ -77,6 +78,8 @@ dame todas las pizzas que contengan la palabra "car" la página 1 y 25 registros
 	QueryString
 
 https://www.odata.org/
+https://olingo.apache.org/
+https://graphql.org/
 
 400-Bad Request	409
 	{name:"el atributo es requerido"}
