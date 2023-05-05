@@ -1,8 +1,9 @@
 1. Repaso a cors
 2. Login
 3. Token vs cookie
-4. XSS
-5. CSRF
+4. XSS(CSP)
+5. CSRF(bearer)
 6. datos criticos
-8. Oauth
-9. Implementación de un servicio rest con Spring Boot
+7. Oauth
+
+8. Implementación de un servicio rest con Spring Boot

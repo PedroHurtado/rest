@@ -1,0 +1,58 @@
+Login
+    fetch("/login", {
+        method:'POST',
+        body:'{"user":"pedro","pwd":"12334566"}'
+    })
+
+1. Leer el usuario
+2. Comprobar que usuario y pwd son correctos
+
+opcion1:TOKEN
+
+response:
+{
+    token:dfasdlfk hsdlkfhasdlkfhasldkf halskdfhlkasfh 
+    refresh:adfshdlk fjhasdlkf halkasdlfh lsdkfh lasdkfh alsdk
+}
+
+fetch(url,{
+     headers:{ Autorizathion: bearer dfasdlfk hsdlkfhasdlkfhasldkf halskdfhlkasfh } NO CSRF
+
+})
+
+fetch(url,{
+     headers:{ Autorizathion: basic dfasdlfk hsdlkfhasdlkfhasldkf halskdfhlkasfh } SI CSRF
+
+})
+
+1. Tiempo de vida
+    3600
+    //cliente
+1.2 fetch('/refresh,{
+    method:'POST'
+    body: "adfshdlk fjhasdlkf halkasdlfh lsdkfh lasdkfh alsdk"
+})
+
+2. Donde guardamos el token en el cliente
+
+    2.1 LocalStorage
+
+        1. Cada operacion es sincrona
+        2. Cada acceso al storage se serializa y desealiza de objeto a string
+        3. Worker no tienen acceso al LocalStorage
+
+    2.2 IndexDb
+
+        1. Cada operacion es asincrona
+        2. Cada acceso indexdb no se serializa
+        3. Worker
+¿Como me protejo para que un script malicioso no pueda acceder al LocalStorage or indexdb?
+    https://www.w3.org/TR/CSP3/
+
+Diferencias que hay entre un refresh y un token de acceso
+    refresh->guardado y es de larga duración
+    token: JWT
+opcion2:
+
+  set-cookie:1fasdf sdf asdf asdf assdf  ds;http-only(CSRF)
+  fetch credential *

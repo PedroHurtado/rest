@@ -1,0 +1,65 @@
+1. Proveedor de identidad(Google,Twitter,Faceboock,Linkedin)
+        usuario,pwd(x)
+
+2. Nos obliga a registrar nuestra app
+
+        Metainformación:url,description,etc...
+
+        url-callback        http://localhost:8080/oauth/github
+        url                 http://localhost:8080
+
+        client_id->usuario                          589ad5c4e8bbdba18fc6
+        client-secret->pwd de mi applicación        xxxxsdfasdfasdfasdfasdfasdfas
+
+        url->redirect
+        url->confirmación(client-secret)
+        url->datos usuario(token)
+
+3. Formulario
+   <button type="sumbit">acceder con github</button>
+4. Post 
+        /login/github
+5. Redireccionar a una url que me dice github
+
+    https://github.com/login/oauth/authorize?
+            client_id=589ad5c4e8bbdba18fc6&
+            scope=read,write&
+            redirect_uri=http://localhost:8080/oauth/github
+    5.1 El usuario no está autenticado en github
+            user+pwd (github)
+    5.2 El usuario está autenticado en github
+            redireccionar nuestro redirect_url
+
+            code=adf sdfasdf adsf asdf asdfdas(temporal)
+
+6. Autenticación con github(SERVER->SERVER)
+        POST https://github.com/login/oauth/access_token
+
+        client_id
+        client_secret
+        code
+        redirect_uri
+7. Nos envia un token
+        Accept: application/json
+    {
+        "access_token":"gho_16C7e42F292c6912E7710c838347Ae178B4a",
+        "scope":"repo,gist",
+        "token_type":"bearer"
+    }
+8. Petición a usuarios
+
+    FirstName
+    LastName
+    email
+9. Registrar usuario
+    FirstName, LastName, Email,                  type
+    pedro      Hurtado   pedohurt@gmail.com      github
+
+    Se debe de hacer en cada proceso de autenticación
+    No he recibido ningún pwd
+
+10. Crear o mi cookie o token propio
+
+
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
+

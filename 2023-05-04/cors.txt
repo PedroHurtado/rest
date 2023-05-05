@@ -1,0 +1,26 @@
+1. Solo es valido desde un explorador(fetch/xhr)
+2. Si se hace una llamada desde servidor a servidor (no hay cors)
+3. Una aplicación nativa(ios,android) a un api rest(no hay cors)
+
+
+1. El explorador detecta una posible llamada maliciosa entre dominios
+
+     Origin:origen
+
+Source                          Target
+http://localhost:8080           http://localhost:8081
+
+    Access-Control-Allow-Origin: http://localhost:8080  || *
+
+    Deveulve la url y tengo cookie
+
+    1. http://localhost:8080
+        fetch(http://localhost:8081,{crecential:inclue}) //CSRF
+    2.*
+
+        fetch(http://localhost:8081,{crecential:inclue}) //CSRF
+
+        put,post,path,delete
+
+        OPTIONS
+

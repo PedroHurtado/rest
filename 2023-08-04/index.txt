@@ -1,0 +1,3 @@
+QueryString
+Securidad->jwt
+.Net

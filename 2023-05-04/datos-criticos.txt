@@ -1,0 +1,18 @@
+usuario
+
+/user/:dni
+
+/user/52803357A     GET
+
+GET,DELETE              CABECERA http
+PUT,PATCH,POST          CABECERA http o body
+
+
+body:{
+    "dni":"52803357A"
+}
+
+x-dni : 52803357A
+
+x-origin:
+
