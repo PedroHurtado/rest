@@ -1,0 +1,28 @@
+await fetch("http://localhost:8080/api/v1/pizzas")	//GETAll
+await fetch("http://localhost:8080/api/v1/pizzas/1")	//get
+
+const pizza={id:4,name:'pizza4'}
+
+const response = await fetch("http://localhost:8080/api/v1/pizzas",{
+  method:'POST',
+  headers:{
+     "content-type": "application/json"
+  },
+  body:JSON.stringify(pizza),
+})
+
+
+
+const response = await fetch("http://localhost:8080/api/v1/pizzas/1",{
+  method:'DELETE'
+})
+
+
+const pizza = {name:'CARBONARA'}
+const response = await fetch("http://localhost:8080/api/v1/pizzas/1",{
+  method:'PUT',
+  headers:{
+     "content-type": "application/json"
+  },
+  body:JSON.stringify(pizza),
+})
