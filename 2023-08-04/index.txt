@@ -1,3 +1,4 @@
 QueryString
 Securidad->jwt
 .Net
+https://github.com/danvega/jwt
