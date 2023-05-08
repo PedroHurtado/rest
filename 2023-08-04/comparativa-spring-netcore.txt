@@ -1,0 +1,37 @@
+java                                                    .net Core
+                                                        [ApiController]
+@RestController                                         public class PizzasController:RestController{}
+
+En java un controlador se instancia una sola vez
+En .net un controlador se instancia en cada llamada
+
+@RequestMapping("/api/v1/pizzas")                       [[Route("/api/v1/[controller]")]]
+
+@GetMapping                                             [HttpGet]
+@PostMapping                                            [HttpPost]
+@DeleteMapping                                          [HttpDelete]
+@PutMapping                                             [HttpPut]
+
+
+ResponseEntity                                          ActionResult
+
+Get Params
+
+@GetMapping(path = "/{id}")                             HttpGet("{id}")
+public ResponseEntity<?> get(@PathVariable String id)   public ActionResult get(string id)
+
+@RequestBody                                    [FromBody]
+
+En ambos es recomendable escribir un record que es como una clase de solo lectura
+
+Gestión de exction
+
+En ambos creamos customeException, por tanto las lanzamos con throw
+
+@ControllerAdvice                               Middelware
+@HandlerException                               InvokeAsync(HttpContext httpContext)
+                                                    try
+                                                    catch
+QueryParams
+
+RequestParam                                        FormQuery
