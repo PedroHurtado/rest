@@ -1,0 +1,12 @@
+1. LLamadas http via fetch desde el explorador a dominios diferentes
+2. Access-Control-Allow-Origin: *
+
+Cualquiera puede llamar al servidor y evitar cors(autorización y autenticación)
+
+3. Access-Control-Allow-Origin: http://localhost:8081
+and allowCredential:true Access-Control-Allow-Credentials:true
+
+	solo el 8081 puede enviar las cookies
+
+4. Desde una llamada server to server no hay cors
+5. Desde una llamada nativa en IOS o Android no hay cors
