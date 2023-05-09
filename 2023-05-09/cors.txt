@@ -3,6 +3,7 @@
 
 Cualquiera puede llamar al servidor y evitar cors(autorización y autenticación)
 
+
 3. Access-Control-Allow-Origin: http://localhost:8081
 and allowCredential:true Access-Control-Allow-Credentials:true
 

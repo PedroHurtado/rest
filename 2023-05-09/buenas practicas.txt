@@ -1,0 +1,46 @@
+1. Capas
+    Controlador    IController    
+    Applicacion    IApplication
+    Dao            IDao
+
+class Controlador{
+
+       Ipplication application;
+
+       public Controlador(IApplication application){
+         this.application = application;
+       }
+
+
+class Applicacion{
+       Dao dao = new Dao
+}
+
+class Dao{
+
+}
+}
+
+1.1 Migrar a una arquitectura clean arquitectur
+
+1.2 Arquitectura hexagonal
+
+        Puertos y adaptadores
+
+        1. in       Controllador
+        2. out      Repositorio
+
+        Controller
+        
+        Application
+            Loggin
+            Transacciones
+            Validaciones
+        Dominio(el único sito donde reside nuestra lógica de negocio)
+
+        Infraestructura
+            BB.DD
+
+1.3 Vertical Slice
+
+}
