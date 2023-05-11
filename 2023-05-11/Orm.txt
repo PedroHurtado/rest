@@ -1,0 +1,74 @@
+Orm
+
+Object Relational Mapping
+
+//Root
+class Ingredients{
+    String Id
+    String Name
+}
+
+//Root
+class Pizza{
+
+    String Id
+    String Name
+    List<Ingredients> Ingredients
+}
+
+Pizzas
+Ingredientes
+Pizzas-Ingredientes (n:m)
+key Pizza    key ingrediente
+
+¿Que patrones de diseño tiene un orm?
+
+1. Repository Pattern
+
+    add
+    update
+    remove
+    get
+
+2. UON(Unit of Work)
+
+    save
+    try{
+        //open conexion
+        //begin transaction
+        insert into Pizzas
+        insert into Ingredients-Pizzs
+        //commit transaction
+    }
+    cath{
+        //roolback transaction
+    }
+    finally{
+        //close conexion
+    }
+
+3. Proxi
+    Recupera la tabla principal por el id
+        Pizza.Ingredients (Lazy Load)
+        recuperar los Ingredientes por el id de la pizza
+        List<Ingredientes> getIngredients(){
+            if(ingredients == null){
+                //recuperar los ingredients
+            }
+        }
+4. Traking
+    add                     insert
+    get
+        update                  update  (old,new)
+        remove                  delete
+
+recupero una entidad por get
+    pending         update
+
+    pizza.setName("Carbonara")
+
+
+Eager vs Lazy Loading(rexomendada)
+
+
+}
